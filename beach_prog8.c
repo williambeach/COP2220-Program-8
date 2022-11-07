@@ -1,5 +1,4 @@
 /*
-*
 * William Beach 
 * COP2220
 * Program 8 - A program that utilizes functions in the string.h library to manipulate and target string data.
@@ -25,8 +24,11 @@ int main() {
     char sentinel;
     greeting(firstName);
     while (sentinel != 'n') {
-        printf("%s, Would you like to enter a word? 'y' (YES) 'n' (NO)", firstName);
+        printf("%s, Would you like to enter a word? 'y' (YES) 'n' (NO) ", firstName);
         scanf(" %c", &sentinel);
+        if (sentinel == 'n') {
+            break;
+        }
         getWord(word, copyOfWord);
         uppercaseWord(copyOfWord);
         strcpy(upperCase, copyOfWord);
@@ -69,7 +71,7 @@ int countVowels(char upper[]) {
     int a = 0, e = 0, i = 0, o = 0, u = 0;
     int length = strlen(upper);
     for (j = 0; j < length; j++) {
-        switch (upper[i]) {
+        switch (upper[j]) {
             case 'A':
                 printf("There is an 'A' located at index %d\n", i);
                 a += 1;
